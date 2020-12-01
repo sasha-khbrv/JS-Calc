@@ -7,7 +7,12 @@ $color-secondary: #ffffff;
 
 //mixins
 @mixin keyFont {
-    
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    line-height: 3em;
+    font-weight: 700;
+    color: $color-primary;
+    text-transform: uppercase;    
 }
 
 //Basis
@@ -16,11 +21,6 @@ $color-secondary: #ffffff;
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: $color-primary;
-
     background-color: $color-secondary;
     padding: 0;
     margin: 0;
@@ -78,32 +78,53 @@ p {
 //Keyboard block
 
 .key {
+    background: transparent;
+    border:none;
     width: 90px;
+    padding: 0;
+
+    @include keyFont;
     text-align: center;
-    line-height: 90px;
-    cursor: pointer;
+
+    cursor: pointer;    
+
     &:hover {
-        span,
-        svg {opacity: 0.5;}
+        background-color: $color-primary;
+        color: $color-secondary;
+        svg {
+            rect, path {
+                fill: $color-secondary;
+            }
+            circle {
+                stroke: $color-secondary;
+            }
+        }
     }
 }
 
-.row .helper {
+.row .key.helper{
     border-left: 10px solid $color-primary;
     border-bottom: 10px solid $color-primary;
+    &:first-child {
+        border-left: none;
+    }
 }
 
-.row.first .key:first-child {
-    border-left: none;
-}
-
-.row.fourth .key:last-child {
+.row.fourth .key.helper {
     border-bottom: none;
 }
 
 .equal {
     width: 180px;
     background-color: $color-primary;
+    border-top: 10px solid $color-primary;
+    border-left: 10px solid $color-primary;
+    &:hover {
+        background-color: $color-secondary;
+        svg rect {
+            fill: $color-primary;
+        }
+    }
 }
 
 

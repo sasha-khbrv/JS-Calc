@@ -24,9 +24,9 @@
             </div>
             <div class="keyboard-container">
                 <div class="row first">
-                    <button class="key number" id="keyAC" name="keyAC" value="AC">AC</button>
-                    <button class="key number" id="keyDel" name="keyDel" value="DEL">DEL</button>
-                    <button class="key number" id="keyPercent" name="keyPercent" value="%">
+                    <button class="key helper" id="keyAC" name="keyAC" value="AC">AC</button>
+                    <button class="key helper" id="keyDel" name="keyDel" value="DEL">DEL</button>
+                    <button class="key helper" id="keyPercent" name="keyPercent" value="%">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="28.728" y="6.10049" width="32" height="4" transform="rotate(135 28.728 6.10049)"
                                 fill="black" />
@@ -34,7 +34,7 @@
                             <circle cx="26" cy="26" r="4.5" stroke="black" stroke-width="3" />
                         </svg>
                     </button>
-                    <button class="key number" id="keyDivision" name="keyDivision" value="/">
+                    <button class="key helper" id="keyDivision" name="keyDivision" value="/">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="28.728" y="6.10049" width="32" height="4" transform="rotate(135 28.728 6.10049)"
                                 fill="black" />
@@ -45,7 +45,7 @@
                     <button class="key number" id="key7" name="key7" value="7">7</button>
                     <button class="key number" id="key8" name="key8" value="8">8</button>
                     <button class="key number" id="key9" name="key9" value="9">9</button>
-                    <button class="key number" id="keyMulti" name="keyMulti" value="*">
+                    <button class="key helper" id="keyMulti" name="keyMulti" value="*">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="25.8994" y="28.7279" width="32" height="4" transform="rotate(-135 25.8994 28.7279)"
                                 fill="black" />
@@ -58,7 +58,7 @@
                     <button class="key number" id="key4" name="key4" value="4">4</button>
                     <button class="key number" id="key5" name="key5" value="5">5</button>
                     <button class="key number" id="key6" name="key6" value="6">6</button>
-                    <button class="key number" id="keySubt" name="keySubt" value="-">
+                    <button class="key helper" id="keySubt" name="keySubt" value="-">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="32" y="18" width="32" height="4" transform="rotate(-180 32 18)" fill="black" />
                         </svg>
@@ -92,7 +92,9 @@
             </div>
         </div>
     </div>
-
+    <script>
+       console.log(document.getElementById("key8")); 
+    </script>
 </body>
 
 </html>
