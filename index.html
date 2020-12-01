@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalistic calculator</title>
+</head>
+<body>
+    <div class="calc-container">
+        <div class="res-container">            
+            <div class="prev-res-container">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+            </div>
+            <input type="text" placeholder="0">
+        </div>
+        <div class="keyboard-container">
+            <div class="top-keys">
+                <div class="key helper" id="keyAC">AC</div>
+                <div class="key helper" id="keyDel">DEL</div>
+                <div class="key helper" id="keyPercent">
+                    <svg width="49" height="50" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16.9158" cy="17.1245" r="3.5" transform="rotate(180 16.9158 17.1245)" stroke="black" stroke-width="3"/>
+                        <rect x="12.2109" y="35.047" width="32" height="3" transform="rotate(-45 12.2109 35.047)" fill="black"/>
+                        <circle cx="32.6667" cy="32.8755" r="3.5" transform="rotate(180 32.6667 32.8755)" stroke="black" stroke-width="3"/>
+                    </svg>
+                </div>
+                <div class="key helper" id="keyDivision">
+                    <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21 5C21 7.76142 18.7614 10 16 10C13.2386 10 11 7.76142 11 5C11 2.23858 13.2386 0 16 0C18.7614 0 21 2.23858 21 5ZM21 24C21 26.7614 18.7614 29 16 29C13.2386 29 11 26.7614 11 24C11 21.2386 13.2386 19 16 19C18.7614 19 21 21.2386 21 24ZM16 26C17.1046 26 18 25.1046 18 24C18 22.8954 17.1046 22 16 22C14.8954 22 14 22.8954 14 24C14 25.1046 14.8954 26 16 26ZM18 5C18 6.10457 17.1046 7 16 7C14.8954 7 14 6.10457 14 5C14 3.89543 14.8954 3 16 3C17.1046 3 18 3.89543 18 5ZM32 13H0V16H32V13Z" fill="black"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="numbers-keys">
+                <div class="top-row">
+                    <div class="key number" id="key7">7</div>
+                    <div class="key number" id="key8">8</div>
+                    <div class="key number" id="key9">9</div>
+                </div>
+                <div class="middle-row">
+                    <div class="key number" id="key4">4</div>
+                    <div class="key number" id="key5">5</div>
+                    <div class="key number" id="key6">6</div>
+                </div>
+                <div class="bottom-row">
+                    <div class="key number" id="key1">1</div>
+                    <div class="key number" id="key2">2</div>
+                    <div class="key number" id="key3">3</div>
+                </div>
+            </div>
+            <div class="right-keys">
+                <div class="key helper" id="keyMulti">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3744 14.4957L22.6275 24.7487L24.7488 22.6274L14.4957 12.3744L24.7488 2.12132L22.6275 0L12.3744 10.253L2.12136 0L4.19617e-05 2.12132L10.2531 12.3744L4.19617e-05 22.6274L2.12136 24.7487L12.3744 14.4957Z" fill="black"/>
+                    </svg>
+                </div>
+                <div class="key helper" id="keyAddc">
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19 19L33.5 19L33.5 16L19 16L19 1.5H16L16 16H1.5L1.5 19L16 19L16 33.5L19 33.5V19Z" fill="black"/>
+                    </svg>
+                </div>
+                <div class="key helper" id="keySubt">
+                    <svg width="32" height="5" viewBox="0 0 32 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="32" y="4.87439" width="32" height="4" transform="rotate(180 32 4.87439)" fill="black"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="bottom-keys">
+                <div class="numbers-keys">
+                    <div class="key number" id="key0">0</div>
+                    <div class="key number" id="keyDot">
+                        <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H4.62V4.62H0V0Z" fill="black"/>
+                        </svg>                            
+                    </div>
+                </div>
+                <div class="key helper" id="keyEqual">
+                    <svg width="32" height="12" viewBox="0 0 32 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="32" y="4" width="32" height="4" transform="rotate(180 32 4)" fill="white"/>
+                        <rect x="32" y="12" width="32" height="4" transform="rotate(180 32 12)" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
