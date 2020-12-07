@@ -17,16 +17,16 @@ class Calculator {
 
     deleteDigit() {
         //Validation        
-        if(this.isEqualPushed) {
+        if(this.isEqualPushed) { //Delete digits in result value
             this.prevOperand = '';
             this.operation = undefined;
             this.isEqualPushed = false;
         }
-        if(this.currentOperand === '') return
+        if(this.currentOperand === '') return //Delete digits when all values are empty
 
         //Delete function
         this.currentOperand = this.currentOperand.toString().slice(0, -1);
-        if(this.currentOperand.length === 0) this.currentOperand = 0;
+        if(this.currentOperand.length === 0) this.currentOperand = 0; //Validation for full number delete
         
     }
 
