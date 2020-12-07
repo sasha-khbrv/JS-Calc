@@ -3,6 +3,7 @@ class Calculator {
         prevOperandText = prevOperandText,
         currentOperandText = currentOperandText,
         this.isEqualPushed = false;
+        this.isOperationBtnPushed = false;
         this.expression = '';
         this.clearAll();
     }
@@ -34,6 +35,10 @@ class Calculator {
         if(this.isEqualPushed) this.clearAll();
         if(this.currentOperand === 0 && digit !== '.') this.currentOperand = '';
         if (digit === '.' && this.currentOperand.includes('.')) return
+        if(this.isOperationBtnPushed) {
+            this.isOperationBtnPushed = false;
+            this.currentOperand = '';
+        }
         this.currentOperand = this.currentOperand + digit;
     }
 
@@ -42,11 +47,18 @@ class Calculator {
             this.prevOperand = this.currentOperand;
             this.isEqualPushed = false;
         }
-        if(this.currentOperand === '') this.currentOperand = 0;
+
+        if(this.isOperationBtnPushed) { //Change operations without any calculation
+            this.prevOperand = this.currentOperand;
+            this.operation = operation;
+            return
+        }
+
         if(this.prevOperand !== '') this.compute();
-        this.operation = operation;
+        this.currentOperand = ''; 
         this.prevOperand = this.currentOperand;
-        this.currentOperand = '';
+        this.operation = operation;
+        
     }
 
     compute() {
@@ -74,7 +86,7 @@ class Calculator {
             default: return;
         }
         this.expression = `${leftOperand } ${this.operation} ${rightOperand}`;
-        this.currentOperand = computationResult;
+        this.currentOperand = this.calcValidation(computationResult); //Validations needs here
         this.operation = undefined;
         this.prevOperand = '';
     }
@@ -82,7 +94,7 @@ class Calculator {
     updateDisplay() {
         currentOperandText.innerText = this.currentOperand;
         prevOperandText.innerText = this.prevOperand;
-        if(this.operation !== undefined) {
+        if(this.operation != null) {
             prevOperandText.innerText = `${this.prevOperand} ${this.operation}`
         }
         if(this.isEqualPushed) {
@@ -91,8 +103,17 @@ class Calculator {
     }
 
     //Validation block
-    inputValidation() {
+    calcValidation(computationResult) {
 
+        if(this.operation === '+' || this.operation === '-') {
+            //console.log("+ or -")
+        }
+
+        if(this.operation === '*' || this.operation === '/') {
+            //console.log("* or /")
+        }
+
+        return computationResult;
     }
 }
 
@@ -128,6 +149,7 @@ deleteBtn.addEventListener('click', () => {
 
 operationBtn.forEach(button => {
     button.addEventListener('click', () => {
+        calculator.isOperationBtnPushed = true;
         calculator.chooseOperation(button.value);
         calculator.updateDisplay();
     });
