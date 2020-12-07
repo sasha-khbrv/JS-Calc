@@ -45,7 +45,8 @@ class Calculator {
         let leftOperand = parseFloat(this.prevOperand);
         let rightOperand = parseFloat(this.currentOperand);
         
-        if (isNaN(leftOperand) || isNaN(rightOperand)) return
+        if (isNaN(leftOperand)) leftOperand = 0; 
+        if (isNaN(rightOperand)) rightOperand = parseFloat(this.prevOperand);        
 
         switch(this.operation) {
             case '+':
@@ -62,7 +63,7 @@ class Calculator {
                 break;
             default: return;
         }
-        this.expression = `${this.prevOperand} ${this.operation} ${this.currentOperand}`;
+        this.expression = `${leftOperand } ${this.operation} ${rightOperand}`;
         this.currentOperand = computationResult;
         this.operation = undefined;
         this.prevOperand = '';
@@ -77,6 +78,11 @@ class Calculator {
         if(this.isEqualPushed) {
             prevOperandText.innerText = `${this.expression} =`;
         }
+    }
+
+    //Validation block
+    inputValidation() {
+
     }
 }
 
