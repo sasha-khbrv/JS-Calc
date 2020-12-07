@@ -1,5 +1,6 @@
 # JS-Calc
 Calculator on vanilla JS
+
 CodePan: https://codepen.io/a_khabarova/pen/ZEpEWdK
 
 Made from the tutorial https://www.youtube.com/watch?v=j59qQ7YWLxw
