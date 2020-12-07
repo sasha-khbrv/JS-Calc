@@ -16,9 +16,18 @@ class Calculator {
     }
 
     deleteDigit() {
+        //Validation        
+        if(this.isEqualPushed) {
+            this.prevOperand = '';
+            this.operation = undefined;
+            this.isEqualPushed = false;
+        }
+        if(this.currentOperand === '') return
+
+        //Delete function
         this.currentOperand = this.currentOperand.toString().slice(0, -1);
-        if(this.currentOperand.length === 0 && this.currentOperand !== '') this.currentOperand = 0;
-        if(this.isEqualPushed) this.clearAll();
+        if(this.currentOperand.length === 0) this.currentOperand = 0;
+        
     }
 
     appendDigits(digit) {
@@ -45,8 +54,9 @@ class Calculator {
         let leftOperand = parseFloat(this.prevOperand);
         let rightOperand = parseFloat(this.currentOperand);
         
-        if (isNaN(leftOperand)) leftOperand = 0; 
-        if (isNaN(rightOperand)) rightOperand = parseFloat(this.prevOperand);        
+        
+        if (isNaN(leftOperand)) leftOperand = 0;                                      //Validation for empities
+        if (isNaN(rightOperand)) rightOperand = parseFloat(this.prevOperand);         //value
 
         switch(this.operation) {
             case '+':
