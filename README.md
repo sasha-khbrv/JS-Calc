@@ -11,8 +11,3 @@ Added some new features:
  + the entire expression is displayed after clicking the equals button
  + you can continue calculating with the previous result
  + some validations for empties values
- 
-In future:
- - add validations for calculating with float numbers
- - add more functions to equal button
- - add tests
