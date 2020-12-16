@@ -12,7 +12,7 @@ $color-secondary: #ffffff;
     line-height: $lh;
     font-weight: 700;
     color: $color-primary;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
 
 //Basis
@@ -49,7 +49,7 @@ p {
     border: 10px solid $color-primary;
     box-shadow: 40px 40px 0px $color-primary;
     display: flex;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .res-container {
@@ -58,7 +58,7 @@ p {
     flex-direction: column;
     justify-content: flex-end;
     padding: 0 20px;
-    text-align: right;    
+    text-align: right;
 }
 
 .keyboard-container {
@@ -94,22 +94,26 @@ p {
 
 .key {
     background: transparent;
-    border:none;
+    border: none;
     width: 90px;
     padding: 0;
 
     @include basicFont(30px, 90px);
     text-align: center;
 
-    cursor: pointer;    
+    cursor: pointer;
 
     &:hover {
         background-color: $color-primary;
         color: $color-secondary;
+
         svg {
-            rect, path {
+
+            rect,
+            path {
                 fill: $color-secondary;
             }
+
             circle {
                 stroke: $color-secondary;
             }
@@ -124,9 +128,11 @@ p {
     }
 }
 
-.helper, .operation {
+.helper,
+.operation {
     border-left: 10px solid $color-primary;
     border-bottom: 10px solid $color-primary;
+
     &:focus {
         border-left: 10px solid $color-primary;
         border-bottom: 10px solid $color-primary;
@@ -147,12 +153,15 @@ p {
     background-color: $color-primary;
     border-top: 10px solid $color-primary;
     border-left: 10px solid $color-primary;
+
     &:hover {
         background-color: $color-secondary;
+
         svg rect {
             fill: $color-primary;
         }
     }
+
     &:focus {
         border-top: 10px solid $color-primary;
         border-left: 10px solid $color-primary;
@@ -162,6 +171,3 @@ p {
 svg {
     pointer-events: none;
 }
-
-
-

@@ -52,9 +52,10 @@ class Calculator {
         }
 
         if (this.prevOperand !== '') this.compute();
-        this.currentOperand = '';
+
         this.prevOperand = this.currentOperand;
         this.operation = operation;
+        this.currentOperand = '';
     }
 
     compute() {
@@ -62,7 +63,7 @@ class Calculator {
         let leftOperand = parseFloat(this.prevOperand);
         let rightOperand = parseFloat(this.currentOperand);
 
-        if (isNaN(leftOperand)) leftOperand = 0; //Validation for empities
+        if (isNaN(leftOperand)) leftOperand = 0;                               //Validation for empities
         if (isNaN(rightOperand)) rightOperand = parseFloat(this.prevOperand); //value
 
         switch (this.operation) {
@@ -81,7 +82,7 @@ class Calculator {
             default:
                 return;
         }
-        
+
         this.expression = `${leftOperand } ${this.operation} ${rightOperand}`;
         this.currentOperand = computationResult;
         this.operation = undefined;
