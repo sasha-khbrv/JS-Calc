@@ -9,4 +9,3 @@ Added some new features:
  + the entire expression is displayed after clicking the equals button
  + you can continue calculating with the previous result
  + some validations for empties values
- + you can use the keyboard
