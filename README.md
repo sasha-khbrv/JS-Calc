@@ -1,8 +1,6 @@
 # JS-Calc
 Calculator on vanilla JS
 
-CodePan: https://codepen.io/a_khabarova/pen/ZEpEWdK
-
 Made from the tutorial https://www.youtube.com/watch?v=j59qQ7YWLxw
 
 Added some new features: 
@@ -11,3 +9,4 @@ Added some new features:
  + the entire expression is displayed after clicking the equals button
  + you can continue calculating with the previous result
  + some validations for empties values
+ + you can use the keyboard
