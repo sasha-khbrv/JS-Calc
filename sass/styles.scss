@@ -171,3 +171,28 @@ p {
 svg {
     pointer-events: none;
 }
+
+.activeBtn {
+    background-color: $color-primary;
+    color: $color-secondary;
+
+    svg {
+
+        rect,
+        path {
+            fill: $color-secondary;
+        }
+
+        circle {
+            stroke: $color-secondary;
+        }
+    }
+}
+
+.activeEnter {
+    background-color: $color-secondary;
+
+    svg rect {
+        fill: $color-primary;
+    }
+}

@@ -1,8 +1,8 @@
 class Calculator {
     constructor(prevOperandText, currentOperandText) {
         prevOperandText = prevOperandText,
-            currentOperandText = currentOperandText,
-            this.isEqualPushed = false;
+        currentOperandText = currentOperandText,
+        this.isEqualPushed = false;
         this.isOperationBtnPushed = false;
         this.expression = '';
         this.clearAll();
@@ -100,7 +100,31 @@ class Calculator {
         }
     }
 
-    
+    showBtnPress(btnValue) {
+
+        if (btnValue === 'Enter') {
+            equalBtn.classList.add('activeEnter');
+            setTimeout(() => {
+                equalBtn.classList.remove('activeEnter');
+            }, 200);
+        } else if (btnValue === 'Escape') {
+            clearAllBtn.classList.add('activeBtn');
+            setTimeout(() => {
+                clearAllBtn.classList.remove('activeBtn');
+            }, 200);
+        } else if (btnValue === 'Backspace') {
+            deleteBtn.classList.add('activeBtn');
+            setTimeout(() => {
+                deleteBtn.classList.remove('activeBtn');
+            }, 200);
+        } else {
+            let btn = document.getElementById(btnValue)
+            btn.classList.add('activeBtn');
+            setTimeout(() => {
+                btn.classList.remove('activeBtn');
+            }, 200);
+        }            
+    }
 }
 
 //Assign all calc's elements
@@ -110,7 +134,8 @@ const prevOperandText = document.querySelector('[data-previousOperand]'),
     deleteBtn = document.querySelector('[data-delete]'),
     operationBtn = document.querySelectorAll('[data-operation]'),
     digitBtn = document.querySelectorAll('[data-digit]'),
-    equalBtn = document.querySelector('[data-equal]');
+    equalBtn = document.querySelector('[data-equal]'),
+    allBtns = document.querySelectorAll('button');
 
 //Create calculator
 const calculator = new Calculator(prevOperandText, currentOperandText);
@@ -147,24 +172,30 @@ equalBtn.addEventListener('click', () => {
     calculator.updateDisplay();
 });
 
+//Keyboard input
 document.addEventListener('keydown', (e) => {  
     const digitStr = '1234567890.';
     const operationStr = '/*-+'    
     if(digitStr.includes(e.key)) {
+        calculator.showBtnPress(e.key);
         calculator.appendDigits(e.key);
         calculator.updateDisplay();
     } else if(operationStr.includes(e.key)) {
+        calculator.showBtnPress(e.key);
         calculator.isOperationBtnPushed = true;
         calculator.chooseOperation(e.key);
         calculator.updateDisplay();
     } else if(e.key === 'Enter') {
+        calculator.showBtnPress(e.key);
         calculator.isEqualPushed = true;
         calculator.compute();
         calculator.updateDisplay();
     } else if(e.key === 'Backspace') {
+        calculator.showBtnPress(e.key);
         calculator.deleteDigit();
         calculator.updateDisplay();
     } else if (e.key === 'Escape') {
+        calculator.showBtnPress(e.key);
         calculator.clearAll();
         calculator.updateDisplay();
     } else {
