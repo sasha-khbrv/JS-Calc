@@ -99,6 +99,8 @@ class Calculator {
             prevOperandText.innerText = `${this.expression} =`;
         }
     }
+
+    
 }
 
 //Assign all calc's elements
@@ -144,3 +146,28 @@ equalBtn.addEventListener('click', () => {
     calculator.compute();
     calculator.updateDisplay();
 });
+
+document.addEventListener('keydown', (e) => {  
+    const digitStr = '1234567890.';
+    const operationStr = '/*-+'    
+    if(digitStr.includes(e.key)) {
+        calculator.appendDigits(e.key);
+        calculator.updateDisplay();
+    } else if(operationStr.includes(e.key)) {
+        calculator.isOperationBtnPushed = true;
+        calculator.chooseOperation(e.key);
+        calculator.updateDisplay();
+    } else if(e.key === 'Enter') {
+        calculator.isEqualPushed = true;
+        calculator.compute();
+        calculator.updateDisplay();
+    } else if(e.key === 'Backspace') {
+        calculator.deleteDigit();
+        calculator.updateDisplay();
+    } else if (e.key === 'Escape') {
+        calculator.clearAll();
+        calculator.updateDisplay();
+    } else {
+        return
+    }    
+})
