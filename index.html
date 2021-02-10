@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalistic calculator</title>
+    <link rel="shortcut icon" href="images/fav.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="calc-container">
+            <div class="res-container">
+                    <div class="previous-value" data-previousOperand></div>
+                    <div class="current-value" data-currentOperand></div>
+            </div>
+            <div class="keyboard-container">
+                <div class="row first">
+                    <button class="key helper" value="ac" title="Clear all" data-allClear>AC</button>
+                    <button class="key helper" value="c" title="Delete" data-delete>DEL</button>                    
+                    <button class="key operation" title="Division"  id="/" value="/" data-operation>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="28.728" y="6.10049" width="32" height="4" transform="rotate(135 28.728 6.10049)"
+                                fill="black" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="row second">
+                    <button class="key digit" value="7" id="7" data-digit>7</button>
+                    <button class="key digit" value="8" id="8" data-digit>8</button>
+                    <button class="key digit" value="9" id="9" data-digit>9</button>
+                    <button class="key operation" title="Multiply" id="*" value="*" data-operation>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25.8994" y="28.7279" width="32" height="4" transform="rotate(-135 25.8994 28.7279)"
+                                fill="black" />
+                            <rect x="28.7278" y="6.10049" width="32" height="4" transform="rotate(135 28.7278 6.10049)"
+                                fill="black" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="row third">
+                    <button class="key digit" value="4" id="4" data-digit>4</button>
+                    <button class="key digit" value="5" id="5" data-digit>5</button>
+                    <button class="key digit" value="6" id="6" data-digit>6</button>
+                    <button class="key operation" title="Subtraction" value="-" id="-" data-operation>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="32" y="18" width="32" height="4" transform="rotate(-180 32 18)" fill="black" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="row fourth">
+                    <button class="key digit" value="1" id="1" data-digit>1</button>
+                    <button class="key digit" value="2" id="2" data-digit>2</button>
+                    <button class="key digit" value="3" id="3" data-digit>3</button>
+                    <button class="key operation" title="Addition" value="+" id="+" data-operation>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="32" y="18" width="32" height="4" transform="rotate(-180 32 18)" fill="black" />
+                            <rect x="18" width="32" height="4" transform="rotate(90 18 0)" fill="black" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="row fifth">
+                    <button class="key digit" value="0" id="+" data-digit>0</button>
+                    <button class="key digit" value="." id="." data-digit>.</button>
+                    <button class="key equal" value="=" data-equal>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="32" y="14" width="32" height="4" transform="rotate(180 32 14)" fill="white" />
+                            <rect x="32" y="22" width="32" height="4" transform="rotate(180 32 22)" fill="white" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
