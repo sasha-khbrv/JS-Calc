@@ -101,7 +101,6 @@ class Calculator {
     }
 
     showBtnPress(btnValue) {
-
         if (btnValue === 'Enter') {
             equalBtn.classList.add('activeEnter');
             setTimeout(() => {
